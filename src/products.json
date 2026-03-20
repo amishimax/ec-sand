@@ -1,0 +1,20 @@
+[
+  {
+    "id": "prod_UBHyY98TkzZJfu",
+    "name": "あんぱん",
+    "price": 230,
+    "priceId": "price_1TCvOSQVRsl5AOLydxsKoVIc",
+    "image": "/images/anpan.jpg",
+    "description": "おいしいあんぱん",
+    "published": true
+  },
+  {
+    "id": "prod_UBHzldmlDHXM1p",
+    "name": "カレーパン",
+    "price": 310,
+    "priceId": "price_1TCvPiQVRsl5AOLytEKh0v0w",
+    "image": "/images/currypan.jpeg",
+    "description": "ピリ辛カレーパン",
+    "published": true
+  }
+]

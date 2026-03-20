@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Shop</title>
+</head>
+<body>
+  <h1>My Shop</h1>
+  <div>
+    <img src="/images/anpan.jpg" alt="あんぱん" width="300" />
+    <h2>あんぱん</h2>
+    <p>税込 230円</p>
+    <button id="buy-button">購入する</button>
+  </div>
+  <div>
+    <img src="/images/currypan.jpeg" alt="カレーパン" width="300" />
+    <h2>カレーパン</h2>
+    <p>税込 310円</p>
+    <button id="buy-button">購入する</button>
+  </div>
+
+  <script>
+    document.getElementById("buy-button").addEventListener("click", async () => {
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          productId: "prod_UBHyY98TkzZJfu"
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Checkout Session の作成に失敗しました");
+        console.error(data);
+      }
+    });
+  </script>
+</body>
+</html>
